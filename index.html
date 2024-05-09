@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pesquisa - Experiência Stranger Things</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f0f0f0;
+    }
+    .container {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+    form {
+      margin-top: 20px;
+    }
+    fieldset {
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+    legend {
+      font-weight: bold;
+      color: #555;
+    }
+    label {
+      display: block;
+      margin-bottom: 5px;
+      color: #666;
+    }
+    input[type="text"],
+    input[type="number"],
+    select {
+      width: calc(100% - 22px);
+      padding: 8px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+    input[type="submit"] {
+      width: 100%;
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    input[type="submit"]:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Pesquisa - Experiência Stranger Things</h1>
+  <form action="#" method="POST">
+    <fieldset>
+      <legend>Informações Pessoais</legend>
+      <label for="cidade">1. De qual cidade você é?</label>
+      <input type="text" id="cidade" name="cidade">
+      <label for="idade">Idade:</label>
+      <input type="number" id="idade" name="idade" min="18">
+      <label for="genero">Gênero:</label>
+      <select id="genero" name="genero">
+        <option value="masculino">Masculino</option>
+        <option value="feminino">Feminino</option>
+        <option value="outro">Outro</option>
+      </select>
+    </fieldset>
+
+    <fieldset>
+      <legend>Como ficou sabendo da experiência?</legend>
+      <label><input type="checkbox" name="sabedoria" value="Redes sociais">Redes sociais</label>
+      <label><input type="checkbox" name="sabedoria" value="Internet">Internet</label>
+      <label><input type="checkbox" name="sabedoria" value="Anúncio rua">Anúncio rua</label>
+      <label><input type="checkbox" name="sabedoria" value="Cinema">Cinema</label>
+      <label><input type="checkbox" name="sabedoria" value="Peças de divulgação no próprio Shopping">Peças de divulgação no próprio Shopping</label>
+      <label><input type="checkbox" name="sabedoria" value="Indicação de amigos/familiares">Indicação de amigos/familiares</label>
+      <label><input type="checkbox" name="sabedoria" value="Rádio">Rádio</label>
+      <label><input type="checkbox" name="sabedoria" value="Outros">Outros (Especificar):</label>
+      <input type="text" name="sabedoria-outros">
+    </fieldset>
+
+    <fieldset>
+      <legend>Em relação à impressão com a sua experiência, qual é o seu grau de satisfação?</legend>
+      <label><input type="radio" name="satisfacao" value="Muito Satisfeito">Muito Satisfeito</label>
+      <label><input type="radio" name="satisfacao" value="Satisfeito">Satisfeito</label>
+      <label><input type="radio" name="satisfacao" value="Nem satisfeito, nem insatisfeito">Nem satisfeito, nem insatisfeito</label>
+      <label><input type="radio" name="satisfacao" value="Insatisfeito">Insatisfeito</label>
+      <label><input type="radio" name="satisfacao" value="Muito Insatisfeito">Muito Insatisfeito</label>
+    </fieldset>
+
+    <!-- Adicione o resto das perguntas aqui -->
+
+    <fieldset data-conditional="motivo">
+      <legend>Você veio ao Shopping especialmente para a experiência ou estava de passagem pelo Shopping e conheceu a experiência e resolveu visitar?</legend>
+      <label><input type="radio" name="motivo" value="Especialmente para a experiência">Especialmente para a experiência</label>
+      <label><input type="radio" name="motivo" value="Estava de passagem e decidi visitar">Estava de passagem e decidi visitar</label>
+    </fieldset>
+
+    <fieldset data-conditional="servicos">
+      <legend>Você já usou ou pretende usar algum serviço ou já fez ou irá fazer compras no Shopping após sua visita à experiência?</legend>
+      <label><input type="radio" name="servicos" value="Sim">Sim</label>
+      <label><input type="radio" name="servicos" value="Não">Não</label>
+    </fieldset>
+
+    <fieldset data-conditional="servicos-utilizar">
+      <legend>Qual ou quais serviços você pretende utilizar?</legend>
+      <label><input type="checkbox" name="servicos-utilizar" value="Praça da alimentação/restaurantes">Praça da alimentação/restaurantes</label>
+      <label><input type="checkbox" name="servicos-utilizar" value="Fazer compras">Fazer compras</label>
+      <label><input type="checkbox" name="servicos-utilizar" value="Utilizar outros serviços">Utilizar outros serviços (Especificar):</label>
+      <input type="text" name="outros-servicos">
+    </fieldset>
+
+    <fieldset data-conditional="responsavel">
+      <legend>Ao seu entender, quem trouxe a Experiência Stranger Things para São Paulo?</legend>
+      <label><input type="checkbox" name="responsavel" value="Shopping Eldorado">Shopping Eldorado</label>
+      <label><input type="checkbox" name="responsavel" value="Netflix">Netflix</label>
+      <label><input type="checkbox" name="responsavel" value="Blast Entretenimento">Blast Entretenimento</label>
+      <label><input type="checkbox" name="responsavel" value="DC Set Group">DC Set Group</label>
+      <label><input type="checkbox" name="responsavel" value="Fever">Fever</label>
+      <label><input type="checkbox" name="responsavel" value="Não sabe">Não sabe</label>
+      <label><input type="checkbox" name="responsavel" value="Outro">Outro (Especificar):</label>
+      <input type="text" name="outro-responsavel">
+    </fieldset>
+
+    <!-- Adicione o resto das perguntas aqui -->
+
+    <fieldset>
+      <legend>O que você achou do local da experiência?</legend>
+      <label><input type="radio" name="local" value="Ótimo">Ótimo</label>
+      <label><input type="radio" name="local" value="Bom">Bom</label>
+      <label><input type="radio" name="local" value="Regular">Regular</label>
+      <label><input type="radio" name="local" value="Ruim">Ruim</label>
+      <label><input type="radio" name="local" value="Péssimo">Péssimo</label>
+    </fieldset>
+
+    <fieldset>
+      <legend>O que você achou das atividades imersivas que estavam na experiência?</legend>
+      <label><input type="radio" name="atividades" value="Ótimo">Ótimo</label>
+      <label><input type="radio" name="atividades" value="Bom">Bom</label>
+      <label><input type="radio" name="atividades" value="Regular">Regular</label>
+      <label><input type="radio" name="atividades" value="Ruim">Ruim</label>
+      <label><input type="radio" name="atividades" value="Péssimo">Péssimo</label>
+    </fieldset>
+
+    <fieldset>
+      <legend>Que parte mais gostou do MIX TAPE, o lugar comum ao término das atividades?</legend>
+      <label><input type="checkbox" name="parte-gostou" value="Lojas de bebidas, comidas">Lojas de bebidas, comidas</label>
+      <label><input type="checkbox" name="parte-gostou" value="Fliperama Palace Arcade">Fliperama Palace Arcade</label>
+      <label><input type="checkbox" name="parte-gostou" value="Espaços instagramáveis">Espaços instagramáveis</label>
+      <label><input type="checkbox" name="parte-gostou" value="Vendas de produtos">Vendas de produtos</label>
+      <label><input type="checkbox" name="parte-gostou" value="Todos">Todos</label>
+    </fieldset>
+
+    <fieldset>
+      <legend>Esta é a primeira vez que você vem numa experiência imersiva com projeções ou já tinha ido outra vez?</legend>
+      <label><input type="radio" name="experiencia-imersiva" value="Primeira vez numa experiência imersiva">Primeira vez numa experiência imersiva</label>
+      <label><input type="radio" name="experiencia-imersiva" value="Já tinha ido outra vez">Já tinha ido outra vez</label>
+    </fieldset>
+
+    <fieldset>
+      <legend>Nesta aqui do Stranger Thing é a primeira vez ou já veio antes?</legend>
+      <label><input type="radio" name="stranger-things" value="Primeira vez">Primeira vez</label>
+      <label><input type="radio" name="stranger-things" value="Já tinha vindo antes">Já tinha vindo antes</label>
+    </fieldset>
+
+    <fieldset>
+      <legend>Você assistiu a série Stranger Things?</legend>
+      <label><input type="radio" name="serie" value="Sim">Sim</label>
+      <label><input type="radio" name="serie" value="Não">Não</label>
+    </fieldset>
+
+    <fieldset>
+      <legend>Você se considera um fã da série?</legend>
+      <label><input type="radio" name="fã" value="Sim">Sim</label>
+      <label><input type="radio" name="fã" value="Não">Não</label>
+    </fieldset>
+
+    <fieldset>
+      <legend>Acha que a experiência valeu o preço que pagou?</legend>
+      <label><input type="radio" name="preço" value="Sim">Sim</label>
+      <label><input type="radio" name="preço" value="Não">Não</label>
+    </fieldset>
+
+    <fieldset>
+      <legend>De forma geral, o que achou da experiência?</legend>
+      <textarea name="geral" rows="4" cols="50"></textarea>
+    </fieldset>
+
+    <fieldset>
+      <legend>Faixa de renda mensal familiar</legend>
+      <label><input type="radio" name="renda" value="Menos de R$ 3.300">Menos de R$ 3.300</label>
+      <label><input type="radio" name="renda" value="R$ 3.301 até R$ 8.250">R$ 3.301 até R$ 8.250</label>
+      <label><input type="radio" name="renda" value="R$ 8.251 até R$ 24.750">R$ 8.251 até R$ 24.750</label>
+      <label><input type="radio" name="renda" value="R$ 24.751 mais">R$ 24.751 mais</label>
+    </fieldset>
+
+    <fieldset>
+      <legend>OBRIGADA!!!!</legend>
+      <label for="nome">Nome:</label>
+      <input type="text" id="nome" name="nome">
+      <label for="idade-final">Idade:</label>
+      <input type="number" id="idade-final" name="idade-final" min="18">
+    </fieldset>
+
+    <input type="submit" value="Enviar">
+  </form>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const fieldsets = document.querySelectorAll('fieldset');
+    fieldsets.forEach(function (fieldset) {
+      const conditional = fieldset.dataset.conditional;
+      if (conditional) {
+        const radios = document.querySelectorAll(`input[name=${conditional}]`);
+        radios.forEach(function (radio) {
+          radio.addEventListener('change', function () {
+            const isChecked = this.value === 'Sim';
+            fieldset.style.display = isChecked ? 'block' : 'none';
+          });
+        });
+      }
+    });
+  });
+</script>
+
+</body>
+</html>

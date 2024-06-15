@@ -1,247 +1,411 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pesquisa - Experiência Stranger Things</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f0f0f0;
-    }
-    .container {
-      max-width: 800px;
-      margin: 20px auto;
-      padding: 20px;
-      background-color: #fff;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    }
-    h1 {
-      text-align: center;
-      color: #333;
-    }
-    form {
-      margin-top: 20px;
-    }
-    fieldset {
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      padding: 20px;
-      margin-bottom: 20px;
-    }
-    legend {
-      font-weight: bold;
-      color: #555;
-    }
-    label {
-      display: block;
-      margin-bottom: 5px;
-      color: #666;
-    }
-    input[type="text"],
-    input[type="number"],
-    select {
-      width: calc(100% - 22px);
-      padding: 8px;
-      margin-bottom: 10px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      box-sizing: border-box;
-    }
-    input[type="submit"] {
-      width: 100%;
-      background-color: #4CAF50;
-      color: white;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-      font-size: 16px;
-    }
-    input[type="submit"]:hover {
-      background-color: #45a049;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GEM Pesquisa</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #f4f4f4;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #ff5733;
+            padding: 1rem;
+            color: white;
+        }
+        header .logo {
+            font-size: 2.0rem;
+            font-weight: bold;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+        nav ul li {
+            margin: 0 1rem;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .banner {
+            background: url('espgem.jpg') no-repeat center center/cover;
+            color: white;
+            text-align: center;
+            padding: 7rem 1rem;
+        }
+        .banner h1 {
+            font-size: 0.90rem;
+            margin: 0;
+        }
+        .banner p {
+            font-size: 1.0rem;
+        }
+        .content {
+            padding: 2rem 1rem;
+            background-color: #fff;
+            margin: 1rem 0;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .content h2 {
+            text-align: center;
+            margin-bottom: 1rem;
+            color: #ff5733;
+        }
+        .content p {
+            text-align: center;
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+        }
+        .content .descricao {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: left;
+        }
+        .content .descricao ul {
+            list-style: none;
+            padding: 0;
+        }
+        .content .descricao ul li {
+            margin: 0.5rem 0;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 1rem;
+            background-color: #f9f9f9;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        form label {
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+        }
+        form input, form textarea {
+            margin-bottom: 1rem;
+            padding: 0.5rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        form button {
+            padding: 0.5rem;
+            background-color: #ff5733;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        form button:hover {
+            background-color: #e64a19;
+        }
+        footer {
+            background-color: #ff5733;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 1rem;
+        }
+        .carrossel {
+            display: flex;
+            overflow-x: scroll;
+            gap: 1rem;
+            padding: 1rem;
+        }
+        .carrossel img {
+            height: 200px;
+            border-radius: 8px;
+        }
+        font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    padding: 20px;
+}
+
+.timeline {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.container {
+    position: relative;
+    padding: 5px;
+    background-color: #ffffff;
+    border-radius: 6px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 5px;
+}
+
+.container::after {
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background-color: #ffffff;
+    border: 4px solid #FF9F55;
+    border-radius: 50%;
+    z-index: 1;
+    left: -10px;
+    top: 5px;
+}
+
+.content {
+    padding-left: 10px;
+}
+
+h2 {
+    color: #FF9F55;
+    margin-top: 0;
+}
+
+p {
+    margin-top: 5px;
+}
+.count {
+    display: inline-block;
+    border: 2px solid #FF9F55;
+    padding: 4px 8px;
+    border-radius: 4px;
+    margin-left: 5px; /* Espaçamento à esquerda para separar os números */
+    font-weight: bold;
+}
+    </style>
 </head>
 <body>
+    <header>
+        <div class="logo">GEM Pesquisa</div>
+        <nav>
+        </nav>
+    </header>
 
-<div class="container">
-  <h1>Pesquisa - Experiência Stranger Things</h1>
-  <form action="#" method="POST">
-    <fieldset>
-      <legend>Informações Pessoais</legend>
-      <label for="cidade">1. De qual cidade você é?</label>
-      <input type="text" id="cidade" name="cidade">
-      <label for="idade">Idade:</label>
-      <input type="number" id="idade" name="idade" min="18">
-      <label for="genero">Gênero:</label>
-      <select id="genero" name="genero">
-        <option value="masculino">Masculino</option>
-        <option value="feminino">Feminino</option>
-        <option value="outro">Outro</option>
-      </select>
-    </fieldset>
+    <section id="home" class="banner">
+        <h1></h1>
+        <p>‎‎ ‎ ‎ ‎ 
+        ‎ ‎‎ ‎ ‎ ‎         ‎ ‎‎ ‎ ‎ ‎         ‎ ‎‎ ‎ ‎ ‎         ‎ ‎‎ ‎ ‎         ‎ ‎‎ ‎ ‎ ‎         ‎ ‎‎ ‎ ‎ ‎ ‎ </p>
+    </section>
 
-    <fieldset>
-      <legend>Como ficou sabendo da experiência?</legend>
-      <label><input type="checkbox" name="sabedoria" value="Redes sociais">Redes sociais</label>
-      <label><input type="checkbox" name="sabedoria" value="Internet">Internet</label>
-      <label><input type="checkbox" name="sabedoria" value="Anúncio rua">Anúncio rua</label>
-      <label><input type="checkbox" name="sabedoria" value="Cinema">Cinema</label>
-      <label><input type="checkbox" name="sabedoria" value="Peças de divulgação no próprio Shopping">Peças de divulgação no próprio Shopping</label>
-      <label><input type="checkbox" name="sabedoria" value="Indicação de amigos/familiares">Indicação de amigos/familiares</label>
-      <label><input type="checkbox" name="sabedoria" value="Rádio">Rádio</label>
-      <label><input type="checkbox" name="sabedoria" value="Outros">Outros (Especificar):</label>
-      <input type="text" name="sabedoria-outros">
-    </fieldset>
+    <section id="solucoes" class="content">
+        <h2>Nossas Soluções</h2>
+        <div class="descricao">
+            <p>Maximize Seus Resultados com Dados Confiáveis</p>
+        </div>
+    </section>
 
-    <fieldset>
-      <legend>Em relação à impressão com a sua experiência, qual é o seu grau de satisfação?</legend>
-      <label><input type="radio" name="satisfacao" value="Muito Satisfeito">Muito Satisfeito</label>
-      <label><input type="radio" name="satisfacao" value="Satisfeito">Satisfeito</label>
-      <label><input type="radio" name="satisfacao" value="Nem satisfeito, nem insatisfeito">Nem satisfeito, nem insatisfeito</label>
-      <label><input type="radio" name="satisfacao" value="Insatisfeito">Insatisfeito</label>
-      <label><input type="radio" name="satisfacao" value="Muito Insatisfeito">Muito Insatisfeito</label>
-    </fieldset>
-
-    <!-- Adicione o resto das perguntas aqui -->
-
-    <fieldset data-conditional="motivo">
-      <legend>Você veio ao Shopping especialmente para a experiência ou estava de passagem pelo Shopping e conheceu a experiência e resolveu visitar?</legend>
-      <label><input type="radio" name="motivo" value="Especialmente para a experiência">Especialmente para a experiência</label>
-      <label><input type="radio" name="motivo" value="Estava de passagem e decidi visitar">Estava de passagem e decidi visitar</label>
-    </fieldset>
-
-    <fieldset data-conditional="servicos">
-      <legend>Você já usou ou pretende usar algum serviço ou já fez ou irá fazer compras no Shopping após sua visita à experiência?</legend>
-      <label><input type="radio" name="servicos" value="Sim">Sim</label>
-      <label><input type="radio" name="servicos" value="Não">Não</label>
-    </fieldset>
-
-    <fieldset data-conditional="servicos-utilizar">
-      <legend>Qual ou quais serviços você pretende utilizar?</legend>
-      <label><input type="checkbox" name="servicos-utilizar" value="Praça da alimentação/restaurantes">Praça da alimentação/restaurantes</label>
-      <label><input type="checkbox" name="servicos-utilizar" value="Fazer compras">Fazer compras</label>
-      <label><input type="checkbox" name="servicos-utilizar" value="Utilizar outros serviços">Utilizar outros serviços (Especificar):</label>
-      <input type="text" name="outros-servicos">
-    </fieldset>
-
-    <fieldset data-conditional="responsavel">
-      <legend>Ao seu entender, quem trouxe a Experiência Stranger Things para São Paulo?</legend>
-      <label><input type="checkbox" name="responsavel" value="Shopping Eldorado">Shopping Eldorado</label>
-      <label><input type="checkbox" name="responsavel" value="Netflix">Netflix</label>
-      <label><input type="checkbox" name="responsavel" value="Blast Entretenimento">Blast Entretenimento</label>
-      <label><input type="checkbox" name="responsavel" value="DC Set Group">DC Set Group</label>
-      <label><input type="checkbox" name="responsavel" value="Fever">Fever</label>
-      <label><input type="checkbox" name="responsavel" value="Não sabe">Não sabe</label>
-      <label><input type="checkbox" name="responsavel" value="Outro">Outro (Especificar):</label>
-      <input type="text" name="outro-responsavel">
-    </fieldset>
-
-    <!-- Adicione o resto das perguntas aqui -->
-
-    <fieldset>
-      <legend>O que você achou do local da experiência?</legend>
-      <label><input type="radio" name="local" value="Ótimo">Ótimo</label>
-      <label><input type="radio" name="local" value="Bom">Bom</label>
-      <label><input type="radio" name="local" value="Regular">Regular</label>
-      <label><input type="radio" name="local" value="Ruim">Ruim</label>
-      <label><input type="radio" name="local" value="Péssimo">Péssimo</label>
-    </fieldset>
-
-    <fieldset>
-      <legend>O que você achou das atividades imersivas que estavam na experiência?</legend>
-      <label><input type="radio" name="atividades" value="Ótimo">Ótimo</label>
-      <label><input type="radio" name="atividades" value="Bom">Bom</label>
-      <label><input type="radio" name="atividades" value="Regular">Regular</label>
-      <label><input type="radio" name="atividades" value="Ruim">Ruim</label>
-      <label><input type="radio" name="atividades" value="Péssimo">Péssimo</label>
-    </fieldset>
-
-    <fieldset>
-      <legend>Que parte mais gostou do MIX TAPE, o lugar comum ao término das atividades?</legend>
-      <label><input type="checkbox" name="parte-gostou" value="Lojas de bebidas, comidas">Lojas de bebidas, comidas</label>
-      <label><input type="checkbox" name="parte-gostou" value="Fliperama Palace Arcade">Fliperama Palace Arcade</label>
-      <label><input type="checkbox" name="parte-gostou" value="Espaços instagramáveis">Espaços instagramáveis</label>
-      <label><input type="checkbox" name="parte-gostou" value="Vendas de produtos">Vendas de produtos</label>
-      <label><input type="checkbox" name="parte-gostou" value="Todos">Todos</label>
-    </fieldset>
-
-    <fieldset>
-      <legend>Esta é a primeira vez que você vem numa experiência imersiva com projeções ou já tinha ido outra vez?</legend>
-      <label><input type="radio" name="experiencia-imersiva" value="Primeira vez numa experiência imersiva">Primeira vez numa experiência imersiva</label>
-      <label><input type="radio" name="experiencia-imersiva" value="Já tinha ido outra vez">Já tinha ido outra vez</label>
-    </fieldset>
-
-    <fieldset>
-      <legend>Nesta aqui do Stranger Thing é a primeira vez ou já veio antes?</legend>
-      <label><input type="radio" name="stranger-things" value="Primeira vez">Primeira vez</label>
-      <label><input type="radio" name="stranger-things" value="Já tinha vindo antes">Já tinha vindo antes</label>
-    </fieldset>
-
-    <fieldset>
-      <legend>Você assistiu a série Stranger Things?</legend>
-      <label><input type="radio" name="serie" value="Sim">Sim</label>
-      <label><input type="radio" name="serie" value="Não">Não</label>
-    </fieldset>
-
-    <fieldset>
-      <legend>Você se considera um fã da série?</legend>
-      <label><input type="radio" name="fã" value="Sim">Sim</label>
-      <label><input type="radio" name="fã" value="Não">Não</label>
-    </fieldset>
-
-    <fieldset>
-      <legend>Acha que a experiência valeu o preço que pagou?</legend>
-      <label><input type="radio" name="preço" value="Sim">Sim</label>
-      <label><input type="radio" name="preço" value="Não">Não</label>
-    </fieldset>
-
-    <fieldset>
-      <legend>De forma geral, o que achou da experiência?</legend>
-      <textarea name="geral" rows="4" cols="50"></textarea>
-    </fieldset>
-
-    <fieldset>
-      <legend>Faixa de renda mensal familiar</legend>
-      <label><input type="radio" name="renda" value="Menos de R$ 3.300">Menos de R$ 3.300</label>
-      <label><input type="radio" name="renda" value="R$ 3.301 até R$ 8.250">R$ 3.301 até R$ 8.250</label>
-      <label><input type="radio" name="renda" value="R$ 8.251 até R$ 24.750">R$ 8.251 até R$ 24.750</label>
-      <label><input type="radio" name="renda" value="R$ 24.751 mais">R$ 24.751 mais</label>
-    </fieldset>
-
-    <fieldset>
-      <legend>OBRIGADA!!!!</legend>
-      <label for="nome">Nome:</label>
-      <input type="text" id="nome" name="nome">
-      <label for="idade-final">Idade:</label>
-      <input type="number" id="idade-final" name="idade-final" min="18">
-    </fieldset>
-
-    <input type="submit" value="Enviar">
-  </form>
+    <section id="area" class="content">
+        <h2>Área de Atuação</h2><div>
+    <p><strong>Atuamos em Todo Brasil</strong></p>
+    <p>
+        A sede da GEM fica em São Paulo, na Brigadeiro Faria Lima, e possui equipes locais em nível nacional contando com supervisores, recrutadores, entrevistadores, moderadores e auditores alocados para cada tipo de demanda, sempre atuando com padrão de qualidade e comprometimento.
+    </p>
 </div>
+        
+    </section>
 
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const fieldsets = document.querySelectorAll('fieldset');
-    fieldsets.forEach(function (fieldset) {
-      const conditional = fieldset.dataset.conditional;
-      if (conditional) {
-        const radios = document.querySelectorAll(`input[name=${conditional}]`);
-        radios.forEach(function (radio) {
-          radio.addEventListener('change', function () {
-            const isChecked = this.value === 'Sim';
-            fieldset.style.display = isChecked ? 'block' : 'none';
-          });
+    <section id="sobre" class="content">
+        <h2>Sobre Nós</h2>
+        <div class="descricao">
+            <p>A GEM Pesquisa atua na área de pesquisa de mercado e opinião há 25 anos atendendo diversos setores.</p>
+            <p>Teve seu início com foco em recrutamento e atualmente cobre todas as pontas de um projeto de pesquisa, desde o planejamento até a entrega final. Atua de forma séria, com comprometimento e qualidade e conta com um time multidisciplinar em todas as regiões do Brasil.</p>
+            <p><strong>Nossa Missão:</strong> Contribuir com nossos clientes em solucionar seus desafios</p>
+           
+            <ul>
+    <li id="pesquisas">Pesquisas Realizadas: <span class="count" data-target="5000">0</span>+</li>
+    <li id="clientes">Clientes: <span class="count" data-target="91">0</span></li>
+    <li id="anos">Anos de Mercado: <span class="count" data-target="20">0</span></li>
+    <li id="entrevistados">Entrevistados: <span class="count" data-target="16000">0K+</span></li>
+    
+</ul>
+            </ul>   <div class="timeline">
+        <div class="container left">
+            <div class="content">
+                <h2>1999</h2>
+                <p>Início das atividades da GEM</p>
+            </div>
+        </div>
+        <div class="container right">
+            <div class="content">
+                <h2>2005</h2>
+                <p>Ampliação da atuação em recrutamento em 5 estados</p>
+            </div>
+        </div>
+        <div class="container left">
+            <div class="content">
+                <h2>2010</h2>
+                <p>Criação da área nacional para Auditoria de Varejo</p>
+            </div>
+        </div>
+        <div class="container right">
+            <div class="content">
+                <h2>2012</h2>
+                <p>Fortalecimento de parcerias locais</p>
+            </div>
+        </div>
+        <div class="container left">
+            <div class="content">
+                <h2>2015</h2>
+                <p>Parceria com analistas e moderadoras</p>
+            </div>
+        </div>
+        <div class="container right">
+            <div class="content">
+                <h2>2015</h2>
+                <p>Adaptação para plataformas digitais para Focus Group e EPs</p>
+            </div>
+        </div>
+        <div class="container left">
+            <div class="content">
+                <h2>2020</h2>
+                <p>Introdução de estudos quantitativos</p>
+            </div>
+        </div>
+        <div class="container right">
+            <div class="content">
+                <h2>2024</h2>
+                <p>Inauguração Espaço GEM</p>
+            </div>
+        </div>
+    </div>
+
+            </ul>
+            <h3>Nossa Equipe</h3>
+            <p>Quem representa a GEM Pesquisa</p>
+        </div>
+    </section>
+
+    <section id="nosso-espaco" class="content">
+        <h2>Nosso Espaço</h2><div>
+    <p><strong>Inaugurado em 2024, o Espaço GEM oferece uma estrutura completa:</strong></p>
+    <ul>
+        <li><strong>2 salas de pesquisa</strong></li>
+        <li><strong>1 sala de espera</strong></li>
+        <li><strong>1 banheiro</strong></li>
+        <li><strong>1 mini cozinha</strong></li>
+    </ul>
+    <p>
+        Localizado na esquina da Faria Lima com a Rebouças, no coração de São Paulo, o espaço está próximo ao metrô Faria Lima e aos principais corredores de ônibus. 
+        A localização privilegiada, com grande fluxo de pessoas e diversidade de perfis, é ideal para estudos de abordagem via intercept.
+    </p>
+    <p>Venha conhecer o Espaço GEM e impulsione o sucesso dos seus projetos.</p>
+</div>
+        
+            <div class="carrossel">
+                <img src="imagem1.png" alt="Espaço GEM 1">
+                <img src="imagem2.png" alt="Espaço GEM 2">
+                <img src="imagem3.png" alt="Espaço GEM 3">
+                <img src="imagem4.png" alt="Espaço GEM 3">
+                <img src="imagem5.png" alt="Espaço GEM 3">
+                <img src="imagem6.png" alt="Espaço GEM 3">
+            </div>
+        </div>
+    </section>
+<section id="contato" class="content">
+    <h2>Contato</h2>
+    <form id="contactForm">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="telefone">Telefone:</label>
+        <input type="tel" id="telefone" name="telefone">
+
+        <label for="empresa">Empresa:</label>
+        <input type="text" id="empresa" name="empresa">
+
+        <label for="mensagem">Mensagem:</label>
+        <textarea id="mensagem" name="mensagem" required></textarea>
+
+        <button type="submit">Enviar</button>
+    </form>
+</section>
+  
+
+    <footer>
+        <p>&copy; 2024 GEM Pesquisa. Todos os direitos reservados.</p>
+        <p>Desenvolvido por Big Avalanche</p>
+        <p>(11) 97704-8462 | contato@gempesquisas.com.br | Av. Brigadeiro Faria Lima, 1572 - Jardim Paulistano - São Paulo/SP</p>
+    </footer>
+
+    <script>
+        // Função para animar a contagem até o número alvo
+        function animateCounters() {
+            var counters = document.querySelectorAll('.count');
+            
+            counters.forEach(counter => {
+                var target = +counter.getAttribute('data-target'); // Obtém o valor alvo
+                var count = +counter.innerText; // Obtém o valor atual
+                
+                var speed = 1000; // Reduzindo a velocidade para uma animação mais lenta
+                var increment = Math.ceil(target / speed);
+                
+                if (count < target) {
+                    counter.innerText = count + increment; // Incrementa até o valor alvo
+                    setTimeout(animateCounters, 500); // Chama recursivamente a função para continuar a animação
+                } else {
+                    counter.innerText = target; // Garante que o valor final seja exatamente o alvo
+                }
+            });
+        }
+
+        // Chama a função para iniciar a animação quando o documento estiver pronto
+        document.addEventListener('DOMContentLoaded', function() {
+            animateCounters();
         });
-      }
-    });
-  });
-</script>
 
+        // Função para enviar os dados para a SheetMonkey
+        function enviarParaSheetMonkey() {
+            const nome = document.getElementById('nome').value;
+            const email = document.getElementById('email').value;
+            const telefone = document.getElementById('telefone').value;
+            const empresa = document.getElementById('empresa').value;
+            const mensagem = document.getElementById('mensagem').value;
+
+            const formData = {
+                Nome: nome,
+                Email: email,
+                Telefone: telefone,
+                Empresa: empresa,
+                Mensagem: mensagem
+            };
+
+            fetch("https://api.sheetmonkey.io/form/7BDshm9ZvNGHVXdEtUGuBn", {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData),
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Erro ao enviar os dados.');
+                }
+                alert('Dados enviados com sucesso!');
+                // Limpar os campos do formulário após o envio bem-sucedido
+                document.getElementById('contactForm').reset();
+            })
+            .catch(error => {
+                console.error('Erro:', error);
+                alert('Ocorreu um erro ao enviar os dados. Por favor, tente novamente mais tarde.');
+            });
+        }
+
+        // Adiciona o evento de submit ao formulário
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            enviarParaSheetMonkey();
+        });
+    </script>
 </body>
 </html>

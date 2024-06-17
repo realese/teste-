@@ -5,13 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GEM Pesquisa</title>
     <style>
-        /* Estilo global */
+        /* Estilo global *//* Estilo global */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     background-color: #eef2f3;
+    max-width: 1200px; /* Adicionado para garantir que o conteúdo não fique muito esticado */
+    margin: 0 auto; /* Centraliza o conteúdo */
 }
 
 /* Cabeçalho */
@@ -239,6 +241,7 @@ footer {
     margin-left: 5px; /* Espaçamento à esquerda para separar os números */
     font-weight: bold;
 }
+
 li {
     list-style: none;
     display: inline-block;
@@ -253,14 +256,79 @@ li {
 @media (max-width: 600px) {
     li {
         display: block;
-        width: 90%; /* 90% para que dois elementos caibam um abaixo do outro */
+        width: 90%; /* 90% para que os elementos fiquem um abaixo do outro */
     }
 }
+
+/* Ajuste para telas maiores */
+@media (min-width: 768px) {
+    header {
+        padding: 1rem 2rem;
+    }
+
+    .banner {
+        padding: 10rem 2rem;
+    }
+
+    .content {
+        padding: 2rem 2rem;
+        margin: 2rem 0;
+    }
+
+    .descricao {
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+
+    form {
+        max-width: 700px;
+    }
+
+    .timeline-container {
+        padding: 2rem;
+    }
+
+    .carrossel {
+        padding: 2rem;
+    }
+
+    .carrossel img {
+        height: 300px;
+    }
+}
+
+/* Equipe */
+.team-members {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.member {
+    text-align: center;
+    margin: 20px;
+}
+
+.member img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #ffffff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.member p {
+    margin-top: 10px;
+    font-weight: bold;
+    color: #333333;
+}
+
     </style>
 </head>
 <body>
     <header>
-        <div class="logo">GEM Pesquisa</div>
+        <div class="logo">Espaço GEM</div>
         <nav>
         </nav>
     </header>
@@ -271,19 +339,6 @@ li {
         ‎ ‎‎ ‎ ‎ ‎         ‎ ‎‎ ‎ ‎ ‎         ‎ ‎‎ ‎ ‎ ‎         ‎ ‎‎ ‎ ‎         ‎ ‎‎ ‎ ‎ ‎         ‎ ‎‎ ‎ ‎ ‎ ‎ </p>
     </section>
 
-    <section id="solucoes" class="content">
-        <h2>Nossas Soluções</h2>
-        <div class="descricao">
-            <p>Maximize Seus Resultados com Dados Confiáveis</p>
-        </div>
-    </section>
-
-    <section id="area" class="content">
-        <h2>Área de Atuação</h2><div>
-    <p><strong>Atuamos em Todo Brasil</strong></p>
-    <p>
-        A sede da GEM fica em São Paulo, na Brigadeiro Faria Lima, e possui equipes locais em nível nacional contando com supervisores, recrutadores, entrevistadores, moderadores e auditores alocados para cada tipo de demanda, sempre atuando com padrão de qualidade e comprometimento.
-    </p>
 </div>
         
     </section>
@@ -291,7 +346,6 @@ li {
     <section id="sobre" class="content">
         <h2>Sobre Nós</h2>
         <div class="descricao">
-            <p>A GEM Pesquisa atua na área de pesquisa de mercado e opinião há 25 anos atendendo diversos setores.</p>
             <p>Teve seu início com foco em recrutamento e atualmente cobre todas as pontas de um projeto de pesquisa, desde o planejamento até a entrega final. Atua de forma séria, com comprometimento e qualidade e conta com um time multidisciplinar em todas as regiões do Brasil.</p>
             <p><strong>Nossa Missão:</strong> Contribuir com nossos clientes em solucionar seus desafios</p>
            
@@ -354,7 +408,9 @@ li {
     </div>
 
             </ul>
-    
+          
+    </div>
+    </div>
     <style>
       .team-members {
     display: flex;
@@ -437,7 +493,7 @@ li {
 
     <footer>
         <p>&copy; 2024 GEM Pesquisa. Todos os direitos reservados.</p>
-        <p>Desenvolvido por Gem pesquisa/Espaço gem 
+        <p>Desenvolvido por Big Avalanche</p>
         <p>(11) 97704-8462 | contato@gempesquisas.com.br | Av. Brigadeiro Faria Lima, 1572 - Jardim Paulistano - São Paulo/SP</p>
     </footer>
 

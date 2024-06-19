@@ -424,28 +424,39 @@ body {
     margin: 0;
     padding: 0;
     list-style: none;
+    overflow-x: auto; /* Permite rolagem horizontal */
+    white-space: nowrap; /* Mantém os eventos na mesma linha */
 }
 
 .timeline-container {
     padding: 0 20px;
+    display: flex; /* Usado para alinhar eventos em linha */
+    gap: 20px; /* Espaçamento entre eventos */
 }
 
 .event {
     position: relative;
     margin-bottom: 40px;
-    padding-left: 40px;
-    max-width: 200px; /* Adicionado para limitar a largura máxima do evento */
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    display: inline-block;
+    text-align: center;
+    width: 250px; /* Define a largura dos eventos */
+    white-space: normal; /* Permite quebra de linha no texto */
 }
 
 .event::before {
     content: '';
     position: absolute;
-    left: 15px;
+    left: 50%;
     top: 0;
     bottom: 0;
-    width: 10px;
+    width: 2px;
     background-color: #ddd;
-    border-radius: 10px;
+    border-radius: 2px;
+    transform: translateX(-50%);
 }
 
 .event-date {
@@ -454,21 +465,15 @@ body {
     background-color: #ddd;
     border-radius: 5px;
     padding: 5px 10px;
-    display: inline-block;
+    display: block;
     margin-bottom: 10px;
-    text-align: center; /* Centraliza o texto dentro do bloco */
 }
 
 .event-description {
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    padding: 15px;
     color: #555;
     word-wrap: break-word; /* Garante a quebra de linha */
-    overflow: hidden; /* Esconde o excesso de texto */
-    text-align: center; /* Centraliza o texto dentro do bloco */
 }
+
 
     </style>
 </head>

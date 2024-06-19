@@ -395,22 +395,75 @@ li {
     font-weight: bold;
     color: #333333;
 }
-         .timeline-container {
-                padding: 2rem;
-            }
+/* Estilo global */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #eef2f3;
+}
 
-            .carrossel {
-                padding: 2rem;
-            }
+/* Estilo da seção da linha do tempo */
+.content {
+    padding: 40px 20px;
+    background-color: #fff;
+    max-width: 1200px;
+    margin: 0 auto;
+}
 
-            .carrossel img {
-                height: 300px;
-            }
+.content h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2em;
+    color: #333;
+}
 
-            .timeline {
-                padding: 2rem;
-            }
-        }
+.timeline {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.timeline-container {
+    padding: 0 20px;
+}
+
+.event {
+    position: relative;
+    margin-bottom: 40px;
+    padding-left: 40px;
+}
+
+.event::before {
+    content: '';
+    position: absolute;
+    left: 15px;
+    top: 0;
+    bottom: 0;
+    width: 10px;
+    background-color: #ddd;
+    border-radius: 10px;
+}
+
+.event-date {
+    font-weight: bold;
+    color: #333;
+    background-color: #ddd;
+    border-radius: 5px;
+    padding: 5px 10px;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+.event-description {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    color: #555;
+}
 
     </style>
 </head>
@@ -454,41 +507,42 @@ li {
     
 </ul>
             </ul>   <div class="timeline">
-         <section class="content">
-        <h2>Linha do Tempo</h2>
-        <div class="timeline">
-            <div class="timeline-container">
-                <div class="event">
-                    <div class="event-date">1999</div>
-                    <div class="event-description">Inicio das atividades da GEM
-</div>
-                </div>
-                <div class="event">
-                    <div class="event-date">2005</div>
-                    <div class="event-description">Ampliação da atuação em recrutamento em 5 estados</div>
-                </div>
-                <div class="event">
-                    <div class="event-date">2012</div>
-                    <div class="event-description">Fortalecimento de parcerias locais
-</div>
-                </div>
-                <div class="event">
-                    <div class="event-date">2015</div>
-                    <div class="event-description">Parceria com analistas e moderadoras
-</div>
-                </div>
-                <div class="event">
-                    <div class="event-date">2015</div>
-                    <div class="event-description">Introdução de estudos quantitativos</div>
-                </div><div class="event">
-                    <div class="event-date">2020</div>
-                    <div class="event-description">Adaptação para plataformas digitais para Focus Group e EPs</div>
-                      <div class="event-date">2024</div>
-                    <div class="event-description">Inauguração Espaço GEM</div>
-                </div>
+        <section class="content">
+    <h2>Linha do Tempo</h2>
+    <div class="timeline">
+        <div class="timeline-container">
+            <div class="event">
+                <div class="event-date">1999</div>
+                <div class="event-description">Inicio das atividades da GEM</div>
+            </div>
+            <div class="event">
+                <div class="event-date">2005</div>
+                <div class="event-description">Ampliação da atuação em recrutamento em 5 estados</div>
+            </div>
+            <div class="event">
+                <div class="event-date">2012</div>
+                <div class="event-description">Fortalecimento de parcerias locais</div>
+            </div>
+            <div class="event">
+                <div class="event-date">2015</div>
+                <div class="event-description">Parceria com analistas e moderadoras</div>
+            </div>
+            <div class="event">
+                <div class="event-date">2015</div>
+                <div class="event-description">Introdução de estudos quantitativos</div>
+            </div>
+            <div class="event">
+                <div class="event-date">2020</div>
+                <div class="event-description">Adaptação para plataformas digitais para Focus Group e EPs</div>
+            </div>
+            <div class="event">
+                <div class="event-date">2024</div>
+                <div class="event-description">Inauguração Espaço GEM</div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
+
 
             </ul>
           

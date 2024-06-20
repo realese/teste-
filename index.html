@@ -72,8 +72,8 @@ nav ul li a:hover {
 }
 
 .carousel img {
-    max-width: 130px;
-    margin-right: 20px;
+    max-width: 100px;
+    margin-right: 50px;
 }
 
 @keyframes carousel-animation {
@@ -101,7 +101,7 @@ nav ul li a:hover {
 }
 
 .banner p {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
 }
 
 /* Conteúdo */
@@ -581,21 +581,6 @@ body {
 .descricao p {
     margin-bottom: 15px;
 }
-         .map-container {
-            width: 100%;
-            height: 0;
-            padding-bottom: 56.25%; /* Proporção 16:9 */
-            position: relative;
-        }
-
-        .map-container iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: 0;
-        }
 
     </style>
 </head>
@@ -611,22 +596,6 @@ body {
         <img src="imgkk.png" alt="Imagem 100">
         <img src="imgkk.png" alt="Imagem 0">
         <img src="imgkk.png" alt="Imagem 00">
-        <img src="imgkk.png" alt="Imagem 100">
-        <img src="imgkk.png" alt="Imagem 0">
-        <img src="imgkk.png" alt="Imagem 00">
-        <img src="imgkk.png" alt="Imagem 100">
-        <img src="imgkk.png" alt="Imagem 0">
-        <img src="imgkk.png" alt="Imagem 100">
-        <img src="imgkk.png" alt="Imagem 0">
-        <img src="imgkk.png" alt="Imagem 00">
-        <img src="imgkk.png" alt="Imagem 100">
-        <img src="imgkk.png" alt="Imagem 0">
-        <img src="imgkk.png" alt="Imagem 00">
-        <img src="imgkk.png" alt="Imagem 100">
-        <img src="imgkk.png" alt="Imagem 0">
-        <img src="imgkk.png" alt="Imagem 00">
-        <img src="imgkk.png" alt="Imagem 100">
-        <img src="imgkk.png" alt="Imagem 0">
         <!-- Adicione mais imagens conforme necessário -->
     </div>
 </div>
@@ -935,18 +904,19 @@ body {
         <button type="submit">Enviar</button>
     </form>
 </section>
-     <div class="map-container">
-        <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3656.607269982866!2d-46.688415524395065!3d-23.58805886408525!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce575af84ad6d5%3A0x62af5a542fe4c7!2sAv.%20Brig.%20Faria%20Lima%2C%201572%20-%20Itaim%20Bibi%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2001451-001%2C%20Brazil!5e0!3m2!1sen!2sus!4v1620082771253!5m2!1sen!2sus" 
-            allowfullscreen="" 
-            loading="lazy">
-        </iframe>
   
 
     <footer>
         <p>&copy; 2024 GEM Pesquisa. Todos os direitos reservados.</p>
         <p>Desenvolvido por Espaço Gem</p>
         <p>(11) 97704-8462 | contato@gempesquisas.com.br | Av. Brigadeiro Faria Lima, 1572 - Jardim Paulistano - São Paulo/SP</p>
+        <div class="map-container">
+        <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3656.607269982866!2d-46.688415524395065!3d-23.58805886408525!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce575af84ad6d5%3A0x62af5a542fe4c7!2sAv.%20Brig.%20Faria%20Lima%2C%201572%20-%20Itaim%20Bibi%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2001451-001%2C%20Brazil!5e0!3m2!1sen!2sus!4v1620082771253!5m2!1sen!2sus" 
+            allowfullscreen="" 
+            loading="lazy">
+        </iframe>
+    </div>
     </footer>
     
 
@@ -1076,5 +1046,38 @@ setInterval(toggleIcon, 5000);
             mainContent.style.marginBottom = marginTopBottom + 'px';
         };
     </script>
+    <style>body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #eef2f3;
+}
+
+.map-container {
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%; /* Proporção 16:9 */
+    position: relative;
+    float: left; /* Alinha o mapa à esquerda */
+    margin: 1rem; /* Adiciona uma margem ao redor do mapa */
+}
+
+.map-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* Ajuste para desktop */
+@media (min-width: 608px) {
+    .map-container {
+        padding-bottom: 75%; /* Proporção 4:3 */
+        width: 50%; /* Ajusta a largura do mapa no desktop */
+    }
+}</style>
 </body>
 </html>

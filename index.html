@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head><meta name="google-site-verification" content="83Cfse1U3BKMcVkOdiSK7lzKo303IYiC-bYwnlVjpfU" />
+<head>
+  <head>
+    <!-- Other head elements -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head><meta name="google-site-verification" content="83Cfse1U3BKMcVkOdiSK7lzKo303IYiC-bYwnlVjpfU" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GEM Pesquisa</title>
@@ -581,10 +585,68 @@ body {
 .descricao p {
     margin-bottom: 15px;
 }
+.banker {
+  width: 100%;
+  height: 300px; /* Ajuste a altura conforme necessário */
+  overflow: hidden;
+  position: relative;
+}
+
+.banker img {
+  width: 500%;
+  height: auto;
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.carrossell img {
+    display: none;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.carrossell img.active {
+    display: block;
+    opacity: 1;
+}
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    font-family: Arial, sans-serif;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+.social-links {
+    margin-top: 10px;
+}
+
+.social-links a {
+    margin: 0 10px;
+    font-size: 20px;
+    color: #fff;
+    transition: color 0.3s;
+}
+
+.social-links a:hover {
+    color: #ddd;
+}
 
     </style>
 </head>
 <body>
+  
  <div class="banner">
     <div class="carousel">
         <img src="imgkk.png" alt="Imagem 100">
@@ -598,10 +660,7 @@ body {
         <img src="imgkk.png" alt="Imagem 00">
         <!-- Adicione mais imagens conforme necessário -->
     </div>
-</div>
-
-</div>
-        
+</div>  
     </section>
     
     <section id="sobre" class="content">
@@ -777,20 +836,35 @@ body {
         </div>
     </section>
 
-    <section id="nosso-espaco" class="content">
-        <h2>Nosso Espaço</h2><div>
+    <section id="nosso-espaco" class="content" style="text-align: center;">
+    <h2>Nosso Espaço</h2>
     <p><strong>Inaugurado em 2024, o Espaço GEM oferece uma estrutura completa:</strong></p>
-    <ul>
+    <ul style="list-style-type: none; padding: 0;">
         <li><strong>2 salas de pesquisa</strong></li>
         <li><strong>1 sala de espera</strong></li>
         <li><strong>1 banheiro</strong></li>
         <li><strong>1 mini cozinha</strong></li>
     </ul>
-    <p>
-        Localizado na esquina da Faria Lima com a Rebouças, no coração de São Paulo, o espaço está próximo ao metrô Faria Lima e aos principais corredores de ônibus. 
-        A localização privilegiada, com grande fluxo de pessoas e diversidade de perfis, é ideal para estudos de abordagem via intercept.
-    </p>
-    <p>Venha conhecer o Espaço GEM e impulsione o sucesso dos seus projetos.</p>
+    <div class="item-list" style="display: inline-block; text-align: left; border: 1px solid #000; padding: 20px; width: 300px; margin-top: 20px;">
+        <h2>Lista de Itens</h2>
+        <ul style="list-style-type: none; padding: 0;">
+            <li>Mini geladeira</li>
+            <li>Mini armário</li>
+            <li>Airfryer para esquentar a comida</li>
+            <li>Duas mesas para entrevistar as pessoas</li>
+            <li>Uma poltrona</li>
+            <li>Quatro cadeiras para as pessoas ficarem sentadas na sala</li>
+            <li>Uma mesa e uma cadeira para alguém preencher o atendimento</li>
+            <li>Ar-condicionado nas duas salas</li>
+             <li>Wi-fi 5G</li>
+              <li>Aplicativo pra recrutamento</li>
+        </ul>
+    </div><p style="text-align: justify; font-family: Arial, sans-serif; margin: 20px; padding: 10px; border: 1px solid #ccc; border-radius: 8px;">
+    Localizado na esquina da Faria Lima com a Rebouças, no coração de São Paulo, o espaço está próximo ao metrô Faria Lima e aos principais corredores de ônibus. A localização privilegiada, com grande fluxo de pessoas e diversidade de perfis, é ideal para estudos de abordagem via intercept.
+    <br><br>
+    Venha conhecer o Espaço GEM e impulsione o sucesso dos seus projetos.
+</p>
+</section>
 </div>
     </section>
     <div class="container">
@@ -867,10 +941,17 @@ body {
 </section>
   
 
-    <footer>
-        <p>&copy; 2024 GEM Pesquisa. Todos os direitos reservados.</p>
-        <p>Desenvolvido por Espaço Gem</p>
-        <p>(11) 97704-8462 | contato@gempesquisas.com.br | Av. Brigadeiro Faria Lima, 1572 - Jardim Paulistano - São Paulo/SP</p>
+<footer>
+    <p>&copy; 2024 GEM Pesquisa. Todos os direitos reservados.</p>
+    <p>Desenvolvido por Espaço Gem</p>
+    <p>Telefone: (11) 97704-8462 | Email: <a href="mailto:contato@gempesquisas.com.br">contato@gempesquisas.com.br</a></p>
+    <p>Endereço: Av. Brigadeiro Faria Lima, 1572 - Jardim Paulistano - São Paulo/SP</p>
+    <div class="social-links">
+        <a href="https://m.facebook.com/giosutto/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.linkedin.com/company/gem-pesquisa?originalSubdomain=br" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://www.instagram.com/espacogem2024?igsh=enhtZ2ZlYW1yZHh2" target="_blank"><i class="fab fa-instagram"></i></a>
+    </div>
+</footer>
         <div class="map-container">
         <iframe 
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3656.607269982866!2d-46.688415524395065!3d-23.58805886408525!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce575af84ad6d5%3A0x62af5a542fe4c7!2sAv.%20Brig.%20Faria%20Lima%2C%201572%20-%20Itaim%20Bibi%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2001451-001%2C%20Brazil!5e0!3m2!1sen!2sus!4v1620082771253!5m2!1sen!2sus" 
